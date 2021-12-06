@@ -2,11 +2,11 @@
 pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Market is Ownable {
+contract Market {
     uint256 offerId = 0;
     uint256 constant NULL = 0;
+    address public immutable admin;
 
     enum itemCondition {
         BAD,
@@ -41,6 +41,10 @@ contract Market is Ownable {
     );
     event OfferPurchase(uint256 offerId, uint256 _priceInWei, address _buyer);
     event Arbitrage(address _arbitrageWinner, uint256 _itemId);
+
+    constructor() {
+        admin = msg.sender;
+    }
 
     function issueOffer(
         uint256 _priceInWei,
@@ -99,19 +103,13 @@ contract Market is Ownable {
     }
 
     function confirmRecive(uint256 _itemId) public {
-        require(
-            msg.sender == buyersMapping[_itemId].buyer || msg.sender == owner()
-        );
+        require(msg.sender == buyersMapping[_itemId].buyer);
         address _recipient = offersArray[_itemId].issuer;
         resolveOrder(_recipient, _itemId);
     }
 
     function resolveOrder(address _recipient, uint256 _itemId) internal {
         uint256 _amount = offersArray[_itemId].price;
-        if (_recipient != address(this)) {
-            _recipient = buyersMapping[_itemId].buyer;
-        }
-
         address token = buyersMapping[_itemId].token;
 
         if (token == address(this)) {
@@ -139,7 +137,7 @@ contract Market is Ownable {
     }
 
     function arbitrage(address _winner, uint256 _itemId) public {
-        require(msg.sender == owner(), "Only owner can call arbitrage.");
+        require(msg.sender == admin, "Only owner can call arbitrage.");
         resolveOrder(_winner, _itemId);
         emit Arbitrage(_winner, _itemId);
     }

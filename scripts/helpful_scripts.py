@@ -2,7 +2,6 @@ from brownie import (
     accounts,
     network,
     config,
-    LinkToken,
     Contract,
 )
 from web3 import Web3
