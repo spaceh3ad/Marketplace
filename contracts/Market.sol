@@ -3,10 +3,12 @@ pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
+// import "Payable.sol";
+
 contract Market {
     uint256 offerId = 0;
     uint256 constant NULL = 0;
-    address public immutable admin;
+    address public immutable owner;
 
     enum itemCondition {
         BAD,
@@ -43,7 +45,7 @@ contract Market {
     event Arbitrage(address _arbitrageWinner, uint256 _itemId);
 
     constructor() {
-        admin = msg.sender;
+        owner = msg.sender;
     }
 
     function issueOffer(
@@ -137,7 +139,7 @@ contract Market {
     }
 
     function arbitrage(address _winner, uint256 _itemId) public {
-        require(msg.sender == admin, "Only owner can call arbitrage.");
+        require(msg.sender == owner, "Only owner can call arbitrage.");
         resolveOrder(_winner, _itemId);
         emit Arbitrage(_winner, _itemId);
     }

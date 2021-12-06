@@ -20,7 +20,7 @@ def issueOffer(market, accounts):
 
 
 def test_marketDeploy(market, accounts):
-    assert market.admin() == accounts[0], "Wrong owner"
+    assert market.owner() == accounts[0], "Wrong owner"
 
 
 def test_issueOffer(market, accounts, issueOffer):
