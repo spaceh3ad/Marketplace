@@ -30,4 +30,7 @@ Featueres:
     Market.confirmRecive - 100.0%                                                                                                                                                     
     Market.resolveOrder - 100.0%      
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> cfd01821fe39690fb640d9a39c6c1e85c9a3edf4

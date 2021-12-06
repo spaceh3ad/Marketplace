@@ -3,8 +3,6 @@ pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-// import "Payable.sol";
-
 contract Market {
     uint256 offerId = 0;
     uint256 constant NULL = 0;
