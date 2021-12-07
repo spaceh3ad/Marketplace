@@ -2,7 +2,7 @@
 Soldity Smart Contract that immitates Digital Marketplace where users to trade items.
 
 Featueres:
-- issue multiple offers (with incremeting ID)
+- issue offer (auto-incremeting ID)
 - see offers by quering `offersArray` with propriete ID to see details of offer
 - buy any offer with providing ID with ETH or any ERC20 standard token (price is just wei)
 - after the bought funds are frozen on smart contract address until buyer doesn't confirm that he received item
