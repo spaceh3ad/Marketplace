@@ -29,4 +29,20 @@ Featueres:
     Market.buyItemWithToken - 100.0%                                                                                                                                                  
     Market.confirmRecive - 100.0%                                                                                                                                                     
     Market.resolveOrder - 100.0%      
+    
+
+    tests/test_Market.py::test_marketDeploy PASSED                                                   [  7%]
+    tests/test_Market.py::test_issueOffer PASSED                                                     [ 14%]
+    tests/test_Market.py::test_buyItemWithEth PASSED                                                 [ 21%]
+    tests/test_Market.py::test_buyItemWithToLessEth PASSED                                           [ 28%]
+    tests/test_Market.py::test_buyItemWithToken PASSED                                               [ 35%]
+    tests/test_Market.py::test_buyItemWithToLessToken PASSED                                         [ 42%]
+    tests/test_Market.py::test_confirmReceiveEth PASSED                                              [ 50%]
+    tests/test_Market.py::test_confirmReciceToken PASSED                                             [ 57%]
+    tests/test_Market.py::test_confirmReceiveEthInvalidAddress PASSED                                [ 64%]
+    tests/test_Market.py::test_arbitrageIssuerEth PASSED                                             [ 71%]
+    tests/test_Market.py::test_arbitrageBuyerEth PASSED                                              [ 78%]
+    tests/test_Market.py::test_arbitrageIssuerToken PASSED                                           [ 85%]
+    tests/test_Market.py::test_arbitrageBuyerToken PASSED                                            [ 92%]
+    tests/test_Market.py::test_arbitrageNonOwner PASSED                                              [100%]
 ```
