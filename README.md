@@ -11,11 +11,13 @@ Featueres:
 - refundig of either ETH or ERC20 while arbitrage
 
 
-1. Requirements:
+# Requirements:
 - `brownie` - developemt framework
 - `ganache-cli` for local development chain
 
-2. Clone this repo
+Open terminal and run:
+1. `git clone https://github.com/spaceh3ad/Marketplace.git`
+2. `ganache-cli`
 3. `brownie test` to test smart contracts
 4. `brownie run scripts/deploy.py` to deploy to local blockchain
 5. `brownie test -vC ` for testing with coverage
