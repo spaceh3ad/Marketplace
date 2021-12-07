@@ -108,7 +108,7 @@ contract Market {
         resolveOrder(_recipient, _itemId);
     }
 
-    function resolveOrder(address _recipient, uint256 _itemId) internal {
+    function resolveOrder(address _recipient, uint256 _itemId) private {
         uint256 _amount = offersArray[_itemId].price;
         address token = buyersMapping[_itemId].token;
 
@@ -123,7 +123,7 @@ contract Market {
     }
 
     function fullfillOrderPayment(address _recipient, uint256 _amount)
-        internal
+        private
     {
         payable(_recipient).transfer(_amount);
     }
@@ -132,7 +132,7 @@ contract Market {
         address _recipient,
         uint256 _amount,
         IERC20 _token
-    ) public {
+    ) private {
         _token.transfer(_recipient, _amount);
     }
 
