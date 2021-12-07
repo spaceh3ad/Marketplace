@@ -12,13 +12,13 @@ Featueres:
 
 
 1. Requirements:
-- Ensure you have `brownie` - https://eth-brownie.readthedocs.io/en/stable/install.html 
-- Ensure you have `ganache-cli` for local development chain
+- `brownie` - developemt framework
+- `ganache-cli` for local development chain
 
 2. Clone this repo
-3. Ensure that you have $MNEMONIC envvar (can be ported from any ganache-cli session)
-4. `brownie test` to test smart contracts
-5. `brownie test -C` for coverage stats
+3. `brownie test` to test smart contracts
+4. `brownie run scripts/deploy.py` to deploy to local blockchain
+5. `brownie test -vC ` for testing with coverage
 
 
 *TEST COVERAGE*:

@@ -65,7 +65,7 @@ def test_confirmReceiveEth(market, issueOffer):
     assert accounts[6].balance() == _balance + 100000000000
 
 
-def test_confirmReciceToken(market, token, issueOffer):
+def test_confirmReciveToken(market, token, issueOffer):
     offerIssuer = market.offersArray(0)[5]
     token.approve(market.address, 100000000000, {"from": accounts[1]})
     market.buyItemWithToken(0, token.address, 100000000000, {"from": accounts[1]})
