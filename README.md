@@ -1,5 +1,5 @@
 # Marketplace
-Soldity Smart Contract that immitates Digital Marketplace where users to trade items.
+Soldity Smart Contract that imitates Digital Marketplace where users to trade items.
 
 Featueres:
 - issue offer (auto-incremeting ID)
